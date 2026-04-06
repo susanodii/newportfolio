@@ -13,6 +13,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
+import TechnicalWriting from "../technicalWriting/technicalWriting";
 
 // HMIP Assets
 import portfolio3 from "../../assets/HMIP.PNG";
@@ -212,7 +213,7 @@ const Portfolio = () => {
             Tech Stack
           </Heading>
           <HStack spacing={2} wrap="wrap">
-            {["React 18", "MUI", "Redux Toolkit", "Axios", "Socket.io", "React Router", "Framer Motion", "TypeScript", "Tailwind CSS"].map((tech) => (
+            {["React 18", "MUI", "Redux Toolkit", "Axios",  "React Router",  "TypeScript", "Tailwind CSS"].map((tech) => (
               <Tag key={tech} colorScheme="blue" size="md" variant="subtle">
                 {tech}
               </Tag>
@@ -313,6 +314,11 @@ const Portfolio = () => {
           Complete frontend code is available on GitHub. Contact me for demo access or code repository links.
         </Text>
       </Box>
+
+<Box Box maxW="1000px" mx="auto" py={16} px={4}>
+<TechnicalWriting />
+</Box>
+      
     </Box>
   );
 };
