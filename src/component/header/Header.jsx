@@ -1,8 +1,8 @@
 // Header.jsx - Fixed with all 7 unique tech badges
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import CTA from "./cta";
 import HeaderSocials from "./HeaderSocials";
-import profileImage from "../../assets/susan1.jpeg";
+
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 import "./header.css";
 import { ThemeManager } from "../../context/ThemeTypes";

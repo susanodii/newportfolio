@@ -1,9 +1,9 @@
 
 
 // HeaderSocials.jsx
-import React from "react";
-import { BsLinkedin, BsGithub, BsTwitter, BsInstagram } from "react-icons/bs";
-import { SiLeetcode } from "react-icons/si";
+
+import { BsLinkedin, BsGithub, BsTwitter } from "react-icons/bs";
+
 
 const HeaderSocials = () => {
   const socialLinks = [

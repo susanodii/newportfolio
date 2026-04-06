@@ -1,8 +1,8 @@
 // About.jsx
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import profileImage from "../../assets/susan2.jpeg";
-import { FaAward, FaUsers, FaLaptopCode, FaArrowRight, FaHeart, FaPenNib } from "react-icons/fa";
-import { AiFillFolderOpen } from "react-icons/ai";
+import { FaArrowRight, FaHeart } from "react-icons/fa";
+
 import "./about.css";
 import { ThemeManager } from "../../context/ThemeTypes";
 

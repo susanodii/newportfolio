@@ -1,6 +1,6 @@
 
 
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { ThemeManager } from "../../context/ThemeTypes";
 import ExperienceStepper from "../experiencestepper/ExperienceStepper"; // ADD THIS

@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineTwitter } from "react-icons/ai";
-import { BsWhatsapp } from "react-icons/bs";
+
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 

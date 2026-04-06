@@ -1,7 +1,7 @@
 
 
 // cta.jsx
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import CV from "../../assets/susan_cv.pdf";
 import { ThemeManager } from "../../context/ThemeTypes";
 import { FiDownload, FiMessageCircle } from "react-icons/fi";
