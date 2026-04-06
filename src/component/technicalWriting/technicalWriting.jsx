@@ -5,14 +5,14 @@ import {
   Text,
   Button,
   Tag,
-  Stack,
+  
   SimpleGrid,
   Badge,
   HStack,
   VStack,
   Divider,
 } from "@chakra-ui/react";
-import { FaExternalLinkAlt, FaFileAlt, FaUsers, FaCodeBranch, FaRobot, FaBlog } from "react-icons/fa";
+import { FaExternalLinkAlt, FaFileAlt,  FaCodeBranch, FaRobot, FaBlog } from "react-icons/fa";
 
 const TechnicalWriting = () => {
   const articles = [

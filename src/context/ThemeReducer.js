@@ -2,7 +2,7 @@ import { CHANGE_THEME } from "./ThemeTypes";
 
 export const themeReducer = (state, action) => {
 	const { isDarkMode } = state;
-	const { type, payload } = action;
+	const { type} = action;
 
 	switch (type) {
 		case CHANGE_THEME:
