@@ -1,28 +1,92 @@
-import React, { useContext } from "react";
+// Header.jsx - Fixed with all 7 unique tech badges
+import React, { useContext, useEffect, useState } from "react";
 import CTA from "./cta";
 import HeaderSocials from "./HeaderSocials";
 import profileImage from "../../assets/susan1.jpeg";
-import { VscSymbolColor } from "react-icons/vsc";
+import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 import "./header.css";
 import { ThemeManager } from "../../context/ThemeTypes";
 
 const Header = () => {
   const { isDarkMode } = useContext(ThemeManager);
-  return (
-    <header id='top'>
-      <div className='container header__container'>
-        <h5>Hi, I'm</h5>
-        <h1>Susan Odii</h1>
-        <h5 className=''>I'm a Frontend Developer</h5>
-        <CTA isDarkMode={isDarkMode} />
-        <HeaderSocials />
+  const [isVisible, setIsVisible] = useState(true);
 
-        <div className='header__profile-image-container'>
-          <img src={profileImage} className='profileImage' alt='me' />
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <header id="top" className={`header ${isDarkMode ? "dark" : "light"}`}>
+      <div className="container header__container">
+        {/* Animated background elements */}
+        <div className="bg-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
         </div>
 
-        <a href='#contact' className='scroll__down'>
-          Scroll Down
+        {/* Text Content */}
+        <div className="header__content">
+          <div className="header__badge">
+            <span className="badge-text">Available for work</span>
+            <span className="badge-dot"></span>
+          </div>
+          
+          <h5 className="header__greeting">
+            <span className="greeting-wave">👋</span> Hi, I'm
+          </h5>
+          
+          <h1 className="header__name">
+            Susan <span className="name-highlight">Ediru</span>
+          </h1>
+          
+          <div className="header__title-wrapper">
+            <div className="header__title">
+              <span className="typed-text">Frontend Developer</span>
+            </div>
+          </div>
+          
+          <p className="header__description">
+            Crafting beautiful, responsive, and high-performance web applications
+          </p>
+        </div>
+
+        {/* CTA Buttons */}
+        <CTA isDarkMode={isDarkMode} />
+
+        {/* Social Links */}
+        <HeaderSocials />
+
+        
+      
+
+        {/* Scroll Indicator */}
+        <a 
+          href="#contact" 
+          className={`scroll__down ${!isVisible ? "fade-out" : ""}`}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToContact();
+          }}
+        >
+          <span className="scroll-text">Scroll Down</span>
+          <MdOutlineKeyboardDoubleArrowDown className="scroll-icon" />
         </a>
       </div>
     </header>
@@ -30,3 +94,10 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+
+
+

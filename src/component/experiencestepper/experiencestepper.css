@@ -1,4 +1,507 @@
-.experinece_stepper_wrapper{
+
+
+
+/* experiencestepper.css - Improved with fixed card sizes and alignment */
+
+.experience-stepper-section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Header Styling */
+.stepper-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.stepper-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  display: inline-block;
+  background: rgba(var(--primary-rgb), 0.1);
+  padding: 0.3rem 1.2rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+
+.stepper-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  background: linear-gradient(135deg, var(--color-text), var(--color-primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.stepper-decoration {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.stepper-decoration span {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  border-radius: 3px;
+}
+
+.stepper-decoration span:nth-child(2) {
+  width: 60px;
+}
+
+/* Main Wrapper */
+.experinece_stepper_wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Custom Stepper */
+.custom-stepper {
+  width: 100%;
+}
+
+/* Individual Step - FIXED: Consistent spacing */
+.stepper-step {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  min-height: 320px; /* FIXED: Minimum height for consistency */
+}
+
+/* Step Indicator Container - FIXED: Fixed width */
+.stepper-step > .chakra-step__indicator {
+  flex-shrink: 0;
+  width: 50px !important;
+  margin-right: 0;
+}
+
+/* Step Indicator */
+.stepper-indicator {
+  background: var(--color-bg-variant);
+  border: 2px solid var(--color-primary);
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.stepper-indicator .chakra-step__number {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.stepper-step:hover .stepper-indicator {
+  transform: scale(1.1);
+  background: var(--color-primary);
+}
+
+.stepper-step:hover .stepper-indicator .chakra-step__number {
+  color: white;
+}
+
+/* Stepper Separator - FIXED: Better positioning */
+.stepper-separator {
+  position: absolute !important;
+  left: 22px !important;
+  top: 45px !important;
+  width: 2px !important;
+  height: calc(100% + 2rem) !important;
+  background: linear-gradient(180deg, var(--color-primary), rgba(var(--primary-rgb), 0.2), transparent) !important;
+  transform: none !important;
+}
+
+/* Experience Card Container - FIXED: Fixed width and alignment */
+.stepper-content {
+  flex: 1;
+  margin-left: 1.5rem;
+  width: calc(100% - 60px);
+  min-width: 0; /* Prevents overflow */
+}
+
+/* Experience Card - FIXED: Consistent height and sizing */
+.experience-card {
+  background: var(--color-bg-variant);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 300px; /* FIXED: Minimum height for all cards */
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary), transparent);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.experience-card:hover::before {
+  width: 6px;
+}
+
+/* Card Header - FIXED: Consistent alignment */
+.experience-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.company-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(var(--primary-rgb), 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.experience-card:hover .company-icon {
+  background: var(--color-primary);
+  color: white;
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* Title Section - FIXED: Proper text handling */
+.company-name {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.job-title {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Meta Information - FIXED: Responsive wrapping */
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba(var(--primary-rgb), 0.2);
+  flex-shrink: 0;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-light);
+  white-space: nowrap;
+}
+
+.meta-icon {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Description - FIXED: Flexible text */
+.experience-description {
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.experience-description p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Responsibilities - FIXED: Scroll if needed, consistent spacing */
+.experience-responsibilities {
+  margin-top: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-responsibilities h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.experience-responsibilities ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-responsibilities li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+  color: var(--color-text);
+  opacity: 0.85;
+  word-wrap: break-word;
+}
+
+.experience-responsibilities li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* FIXED: Ensure last step doesn't have extra separator space */
+.stepper-step:last-child .stepper-separator {
+  display: none !important;
+}
+
+/* FIXED: Chakra UI overrides */
+.custom-stepper .chakra-step {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.custom-stepper .chakra-step__indicator {
+  flex-shrink: 0;
+  margin-right: 0;
+}
+
+.custom-stepper .chakra-step__content {
+  flex: 1;
+  margin-left: 0;
+}
+
+/* Dark Mode Specific */
+.dark .experience-card {
+  background: rgba(30, 30, 40, 0.7);
+}
+
+.dark .company-icon {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Light Mode Specific */
+.light .experience-card {
+  background: rgba(245, 245, 250, 0.8);
+}
+
+.light .company-icon {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .experience-stepper-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .stepper-title {
+    font-size: 2.2rem;
+  }
+  
+  .stepper-header {
+    margin-bottom: 3rem;
+  }
+  
+  .experience-card {
+    min-height: 280px;
+  }
+  
+  .stepper-step {
+    min-height: 280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience-stepper-section {
+    padding: 2rem 1rem;
+  }
+  
+  .stepper-title {
+    font-size: 1.8rem;
+  }
+  
+  .stepper-header {
+    margin-bottom: 2rem;
+  }
+  
+  .stepper-indicator {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  
+  .stepper-separator {
+    left: 18px !important;
+    top: 38px !important;
+  }
+  
+  .stepper-content {
+    margin-left: 1rem;
+    width: calc(100% - 48px);
+  }
+  
+  .experience-card {
+    padding: 1.2rem;
+    min-height: 260px;
+  }
+  
+  .stepper-step {
+    min-height: 260px;
+  }
+  
+  .experience-card-header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .company-name {
+    font-size: 1rem !important;
+  }
+  
+  .experience-meta {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .meta-item {
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stepper-title {
+    font-size: 1.5rem;
+  }
+  
+  .stepper-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .stepper-indicator {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .stepper-separator {
+    left: 15px !important;
+    top: 32px !important;
+  }
+  
+  .stepper-content {
+    margin-left: 0.75rem;
+    width: calc(100% - 42px);
+  }
+  
+  .experience-card {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .stepper-step {
+    min-height: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .company-name {
+    font-size: 0.9rem !important;
+  }
+  
+  .job-title {
+    font-size: 0.8rem;
+  }
+  
+  .experience-description p {
+    font-size: 0.85rem;
+  }
+  
+  .experience-responsibilities li {
+    font-size: 0.8rem;
+  }
+  
+  .company-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .experience-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.stepper-step {
+  animation: slideInLeft 0.5s ease-out backwards;
+}
+
+.stepper-step:nth-child(1) { animation-delay: 0.1s; }
+.stepper-step:nth-child(2) { animation-delay: 0.3s; }
+
+
+
+/* .experinece_stepper_wrapper{
     max-width: 1440px;
     width: 100 ;
     margin: 4rem auto;
@@ -7,4 +510,4 @@
     align-items: center;
 }
 
-
+ */

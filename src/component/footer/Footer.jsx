@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <a href='#top' className='footer__logo'>
-        Susan Odii
+        Susan Ediru
       </a>
 
       <ul className='permalinks'>

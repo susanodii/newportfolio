@@ -72,7 +72,7 @@ const Contact = () => {
           >
             <AiOutlineTwitter className='contact__option-icon' />
             <h4>Twitter</h4>
-            <h5>Susan Odii</h5>
+            <h5>Susan Ediru</h5>
             <a href='https://twitter.com/Emiloluwa' target='blank'>
               Send a message
             </a>
